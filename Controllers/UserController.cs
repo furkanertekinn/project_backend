@@ -27,7 +27,7 @@ namespace product_backend.Controllers
             if (user == null)
                 return NotFound("User Not Found");
 
-            return Ok("Login Success!");
+            return Ok(true);
         }
 
         [HttpPost("register")]
@@ -38,7 +38,7 @@ namespace product_backend.Controllers
 
             await _authContext.Users.AddAsync(userObj);
             await _authContext.SaveChangesAsync();
-            return Ok("User Registered!");
+            return Ok(true);
         }
     }
 }
